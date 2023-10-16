@@ -19,13 +19,13 @@ function play(playerChoice) {
   const resultElements = document.querySelector(".result");
   resultElements.style.display = "flex";
 
-  // Update the computer's choice element with the chosen image and class
+  // Update the computer's choice 
   const computerChoiceElement = document.querySelector(".computer-choice");
   computerChoiceElement.querySelector("img").src = `./resource/${computerChoice}.png`;
   computerChoiceElement.classList.add(computerChoice);
   computerChoiceElement.classList.add("selected");
 
-  // Update the person's choice element with the chosen image and class
+  // Update the person's choice 
   const personChoiceElement = document.querySelector(".person-choice");
   personChoiceElement.querySelector("img").src = `./resource/${playerChoice}.png`;
   personChoiceElement.classList.add(playerChoice);
@@ -52,7 +52,7 @@ function play(playerChoice) {
     personChoiceElement.classList.add("box4");
     updateScore("person_score");
   } else {
-    // Computer wins
+    // pc wins
     resultText.textContent = "YOU LOST";
     resultTexth3.textContent = "AGAINST PC";
     replayButton.textContent = "Play Again";
@@ -71,7 +71,7 @@ function updateScore(scoreType) {
   localStorage.setItem(scoreType, currentScore + 1);
 }
 
-// Function to get the scores from local storage and update the display
+// Function to get the scores from local storage and update 
 function getScoresFromLocalStorage() {
   const pcScore = localStorage.getItem("pc_score");
   const personScore = localStorage.getItem("person_score");
@@ -94,16 +94,16 @@ function showSign() {
   const resultElements = document.querySelector(".result");
   resultElements.style.display = "none";
 
-  // Hide the additional content
+  
   const additionalContent = document.querySelector(".additional-content");
   additionalContent.style.display = "none";
 
   showNextButton(false);
-  // Make the score board visible
+  
   const scoreBoardElements = document.querySelector(".score_board");
   scoreBoardElements.style.display = "flex";
 
-  // Remove classes from computer and person choice elements
+  // Remove classes from pc and person choice elements
   const computerChoiceElement = document.querySelector(".computer-choice");
   computerChoiceElement.querySelector("img").src = "";
   computerChoiceElement.classList.remove("rock", "paper", "scissors", "box4");
@@ -125,11 +125,11 @@ function showAdditionalContent() {
   scoreBoardElements.style.display = "none";
 }
 
-// Function to show the "NEXT" button only when the player wins
+// next button
 function showNextButton(flag) {
   const nextButton = document.getElementById("nextButton");
-  // Check if the player has won (you may need to implement this logic)
-  const playerWon = flag; // Replace with your logic
+  // Check if the player has won 
+  const playerWon = flag; 
   if (playerWon) {
     nextButton.style.display = "block";
   } else {
@@ -137,7 +137,5 @@ function showNextButton(flag) {
   }
 }
 
-// Call the showNextButton function when you need to check if the player has won
 showNextButton();
-// this will load score from local storage
 getScoresFromLocalStorage();
