@@ -9,7 +9,6 @@
 body{
     background-color: #8CC461;
     overflow: hidden;
-    /* overflow: hidden; */
 }
 .score_board{
     width: 50rem;
@@ -137,9 +136,6 @@ button{
     border: 0.2rem solid white; 
     border-radius: 1rem;
 }
-/* button:hover{
-    background-color: black;
-} */
 
 /* Styles for the pop-up rules box */
 .rules-popup {

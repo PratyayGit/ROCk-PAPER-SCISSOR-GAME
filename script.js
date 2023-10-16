@@ -137,5 +137,6 @@ function showNextButton(flag) {
   }
 }
 
+
 showNextButton();
 getScoresFromLocalStorage();
